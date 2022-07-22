@@ -1,4 +1,5 @@
 # Three.js Boilerplate
+https://philszalay.github.io/threejs-boilerplate/
 
 ## Setup
 Download [Node.js 16](https://nodejs.org/en/download/).

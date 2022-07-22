@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
     {
       filename: 'bundle.[contenthash].js',
       path: path.resolve(__dirname, '../dist'),
-      publicPath: argv.mode === 'production' ? '/ThSSD/' : '/'
+      publicPath: argv.mode === 'production' ? '/threejs-boilerplate/' : '/'
     },
     devtool: 'source-map',
     plugins:

@@ -1,0 +1,24 @@
+html,
+body {
+    overscroll-behavior: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+
+.webgl {
+    width: 100vw;
+    height: 100vh;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 1;
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    width: 100%;
+    color: white;
+}

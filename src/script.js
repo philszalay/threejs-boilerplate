@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import Stats from 'three/examples/jsm/libs/stats.module'
 
 export default class ThreeJsDraft {
   constructor () {
@@ -102,6 +103,9 @@ export default class ThreeJsDraft {
   addHelpers () {
     const axisHelper = new THREE.AxisHelper(3)
     this.scene.add(axisHelper)
+
+    this.stats = Stats()
+    document.body.appendChild(this.stats.dom)
   }
 
   addObjects () {
@@ -115,6 +119,7 @@ export default class ThreeJsDraft {
 
   animate () {
     this.orbitControls.update()
+    this.stats.update()
     this.renderer.render(this.scene, this.camera)
     window.requestAnimationFrame(this.animate.bind(this))
   }

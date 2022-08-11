@@ -43,3 +43,6 @@ npm run deploy
 ```
 
 Running the script for the first time will do the initial setup automatically and your project will be published automatically. The gh-pages settings can be found in your repository settings (`Settings -> Pages`).
+
+## Formatting/Linting
+Install https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint in your VS Code to use eslint for formatting and linting. A configuration file (`.eslintrc.js`) is already provided in the project.

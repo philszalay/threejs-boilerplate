@@ -101,7 +101,7 @@ export default class ThreeJsDraft {
   }
 
   addHelpers () {
-    const axisHelper = new THREE.AxisHelper(3)
+    const axisHelper = new THREE.AxesHelper(3)
     this.scene.add(axisHelper)
 
     this.stats = Stats()
@@ -109,7 +109,7 @@ export default class ThreeJsDraft {
   }
 
   addObjects () {
-    const cubeGeometry = new THREE.BoxBufferGeometry(1, 1, 1)
+    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1)
     const cubeMaterial = new THREE.MeshBasicMaterial({
       color: 0x00ff00
     })

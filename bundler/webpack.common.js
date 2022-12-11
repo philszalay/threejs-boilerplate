@@ -9,14 +9,14 @@ module.exports = (env, argv) => {
     {
       filename: 'bundle.[contenthash].js',
       path: path.resolve(__dirname, '../dist'),
-      publicPath: argv.mode === 'production' ? '/threejs-boilerplate/' : '/'
+      publicPath: (argv.mode === 'production' && env.github === 'true') ? '/threejs-boilerplate/' : '/'
     },
-    devtool: 'source-map',
     plugins:
       [
         new HtmlWebpackPlugin({
           template: path.resolve(__dirname, '../src/index.html'),
-          minify: true
+          minify: true,
+          favicon: 'assets/icons/favicon.ico'
         }),
         new MiniCSSExtractPlugin()
       ],
@@ -52,7 +52,7 @@ module.exports = (env, argv) => {
 
           // Images
           {
-            test: /\.(jpg|png|gif|svg|gltf|bin|ico)$/,
+            test: /\.(jpg|png|gif|svg|gltf|bin|ico|hdr)$/,
             use:
               [
                 {
@@ -89,6 +89,12 @@ module.exports = (env, argv) => {
                   }
                 }
               ]
+          },
+
+          // Music
+          {
+            test: /\.wav$/,
+            loader: 'file-loader'
           }
         ]
     }
